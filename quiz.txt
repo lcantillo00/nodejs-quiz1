@@ -1,0 +1,121 @@
+) What is node.js and why should we use it?
+ node.js makes  possible to write applications in JavaScript on the server. Is a platform to build fast network applications when the server only reacts when a event occurs what makes the proyects performance highly scalable in real time applications
+
+
+2) Does NPM come bundled with node.js when you install it?
+npm comes with a node package manager that we can easily install but before we can start to use npm we first have to install Node.js in our system.
+
+3) What is the function used to send a file to a browser from an express app?
+
+  res.sendFile();
+4) What does the following code do? app.use(bodyParser.json());
+
+  body-parser  extracts the entire body portion of an incoming request
+  stream and exposes it on req.body as something easier to interface with.
+5) What does the following code do? app.use(express.static('public'));
+ the app.use(express.static('public')) what this does is to get the folder where the client side is
+ is a mean is where usually as a developer you put all the code that is the frond end , index.html, and the app.js ect ect..
+
+ 6) Please create a basic outline for a CRUD application for the following:
+I am your client, and I need an API for a stock market app I am building. Happily, you got the job!!
+I need the following data:
+- stock name
+- stock symbol
+- stock price
+- time.date of price
+- market instrument is traded on
+I will need the the full complement of CRUD for my API. Read should include the ability to retrieve all the stocks, or one stock.
+Create an outline or plan for the data, and the end points. No need to write the code, but I do want to see the plan that you would implement the API from. Use the following as a model:
+
+
+var stocks={
+ "id":1,
+ "stock name": "lolo",
+ "stock symbol":"lulu",
+ "stock price": 9.99,
+ "time":10:00 AM
+
+}
+{
+" POST/stocks":{
+   "desc":"make a new stock using the object stocks ",
+   "response": "201 aplication/json  example res.json(stocks)",
+   "data":{}// return a object
+},
+"GET/stocks":{
+"desc":"return all stocks",
+"response":"200 aplication/json example res.json(stocks)",
+"data":{}// return a object
+},
+"GET/stocks/:id":{
+"desc":"return one stock that is find by the id provided",
+"response":"200 aplication/json" example res.json,
+"data":{}
+},
+"PUT/stock/:id":{
+"desc":"update and return the matchin stocks with the update information ",
+"resp":"200 aplication/json",
+"data":{}
+},
+"DELETE/stocks/:id":{
+"desc":"delete and return the matching stock with the id provided",
+"resp":"200 aplication/json",
+"data":{}
+}
+
+}
+
+7) What is the “event Loop”?
+
+Node thread keeps an event loop and whenever any task get completed,
+it fires the corresponding event which signals the event listener function to get executed.
+
+8) What is a callback?
+A callback in javascript is known as a higher-order function, is a function that is passed to another function example data.forEach(function(param1,param2){});
+
+9) Please explain synchronous vs asynchronous behavior.
+Synchronous waits for each operation to complete,
+ after that only it executes the next operation.
+ Asynchronous  never waits for each operation to complete, it executes all operations in the first GO only.
+ The result of each operation will be handled once the result is available.
+
+
+ 10) What is package.json?
+ all the npm packages have a package.json that is located in the project root, and holds metadata
+ relevant to the project. this files is used to give information to npm  and handle the project's dependencies
+ description , the version licence information ect.
+
+11) Which module is used for file based operations?
+module.exports
+12) How will you open a file using node?
+fs.open();
+
+13) What is the purpose of __dirname variable?
+ _dirname is the directory name of the current module. is not a global but rather local to each module
+
+
+14) Can you access the DOM in node?
+no you can't
+
+15) Explain briefly how node.js solves the problem of blocking i/o.
+node.js  is Asynchronous IO and event driven, handling all requests asynchronously from single thread.
+
+
+16) What is the most common used framework used in node.js? Hint: It’s used to write web servers.
+ express.js
+
+17) Please write a basic route using the get verb that returns all the items from an array in JSON format. Hint: We did this in class...
+
+app.get('/path',function(req,res){
+        res.jso(path);
+});
+
+18) What does CRUD stand for?
+created read update delete
+ 19) Who developed node.js?
+ ryan dalh
+20) How do we make code in a file (module) in our project accessible to other modules in our project? Please describe what you need to do in the module with the code, and in the module that wishes to use that code.
+
+in the file (module) you use the code module.exports=projectName;
+in the other module to access to the information you write the code
+ var projectName= require("./projectName")
